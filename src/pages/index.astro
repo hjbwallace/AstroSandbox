@@ -1,9 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
+import { Image } from 'astro:assets';
+import publicImage from '/public/images/summertime.jpg';
+import privateImage from '../assets/spaghetti.jpg';
+
 const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
   <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+  <Image src={publicImage} alt="public imported" />
+  <Image src={privateImage} alt="private imported" />
+  <Image src="/AstroSandbox/images/summertime.jpg" alt="Summertime directly" width="50" height="50" />
+  <Image src="https://i.redd.it/s9t2j717ur0f1.jpeg" alt="Formula 1" width="50" height="50" />
+
 </BaseLayout>
