@@ -1,13 +1,8 @@
 ---
-export const prerender = false; 
-
-const { searchParams } = new URL(Astro.request.url);
-const message = searchParams.get('message');
-
 ---
 <h1>Message Input</h1>
 
-<p>Current Message: {message}</p>
+<p>Current Message: <span id="input-message"></span></p>
 
 <form method="GET">
   <label>
@@ -16,3 +11,7 @@ const message = searchParams.get('message');
   </label>
   <button>Submit</button>
 </form>
+
+<script>
+  import "../scripts/input.js";
+</script>
